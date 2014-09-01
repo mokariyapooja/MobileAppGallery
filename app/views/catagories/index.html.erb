@@ -1,0 +1,20 @@
+<center><h1><%= @title %></h1></center>
+
+<h4>
+  <%= paginate @catagories %>
+  <%= link_to "Add Catagory", new_catagory_path %> 
+</h4>
+<%= render 'catagories/search_form'%>
+<table class="fnt">
+  <tr>
+    <th>Name Catagory</th>
+  </tr>
+    <% @catagories.each do |c| %> 
+      <tr>
+        <td><li><%= link_to c.name, catagory_path(c) %></li></td>
+        <td><%= link_to "Show", catagory_path(c) %></td>
+        <td><%= link_to "Edit", edit_catagory_path(c) %></td>
+        <td><%= link_to 'Delete', catagory_path(c),method: :delete,data: { confirm: 'Are you sure?' } %></td>
+      </tr> 
+    <% end %> 
+</table> 

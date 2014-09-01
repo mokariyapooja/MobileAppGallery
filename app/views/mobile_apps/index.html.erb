@@ -1,0 +1,21 @@
+<center><h1><%= @title %></h1></center>
+<h4>
+  <%= paginate @mobile_apps %>
+<h4>
+
+<table>
+  <tr>
+    <th>Name Mobilr Application</th>
+  </tr>
+  <% @mobile_apps.each do |mb| %> 
+    <tr>
+      <td><%= link_to mb.name, mobile_app_path(mb) %></td>
+      <td><p><%= image_tag mb.photo.url(:small) %></p></td>
+
+      <td><%= link_to "Show", mobile_app_path(mb) %></td>
+      <td><%= link_to "Edit", edit_mobile_app_path(mb) %></td>
+      <td><%= link_to 'Delete', mobile_app_path(mb),method: :delete,data: { confirm: 'Are you sure?' } %></td>
+    </tr> 
+  <% end %> 
+</table>
+<h4><%= link_to "back" , root_path%></h4>

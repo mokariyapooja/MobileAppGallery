@@ -1,0 +1,12 @@
+<%= simple_form_for  @mobile_app, :html => {:multipart => true } do |f| %>
+  <%= f.input :name %>
+  <%= f.input :email %>
+  <%= f.input :Selling_Price , :hint => "prices should be in $" %>
+  <%= f.input :Category %>
+  <%= f.input :Android_App_URL, :hint => "ex:http://game/apple.com" %>
+  <%= f.input :Keywords ,:hint => "ex:game,book,space",:hint => "250 character remaining. "%>
+  <%= f.input :Long_Description ,:hint => "ex:game,book,space" ,:hint => '250character remaining.'  %>
+  <%= f.input :photo ,  :multiple => true, :label => "Screen_Shots" %>
+  <%= f.button :submit %>
+  <%= f.button :submit, 'Reset'  ,:type => :reset%>
+<% end %>

@@ -1,0 +1,18 @@
+<h1>Mobile Application Details</h1>
+<p><b>Name:</b>
+  <%= @mobile_app.name  %></p>
+<p><b>Email:</b>
+  <%= @mobile_app.email %></p>
+<p><b>Selling_Price:</b>
+  <%= @mobile_app.Selling_Price %></p>
+<p><b>Category:</b>
+  <%= @mobile_app.Category %></p>
+<p><b>Android_App_URL:</b>
+  <%= @mobile_app.Android_App_URL %></p>
+<p><b>Long_Description:</b>
+  <%= @mobile_app.Long_Description %></p>
+<p><b>Screen_Shots:</b>
+  <div>
+    <%= image_tag @mobile_app.photo.url(:small) %>  
+  </div></p>
+<h4><%= link_to "back to the list" , mobile_apps_path%><h4>
